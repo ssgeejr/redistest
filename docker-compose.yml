@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+    tethysdb:
+        image: redis:6.2.4-buster
+        container_name: redis
+        tty: true
+        restart: always
+#        command: redis-server --appendonly yes
+        volumes:
+            - /opt/apps/redis/data:/data
+#            - /opt/apps/redis/redis.conf:/usr/local/etc/redis/redis.conf
+        ports:
+            - 6379:6379

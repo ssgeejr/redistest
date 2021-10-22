@@ -1,0 +1,4 @@
+#!/bin/bash
+#docker run -v /opt/apps/redisinsight:/db -p 8001:8001 redislabs/redisinsight:latest
+echo "REVIEW THESE OPTIONS FIRST"
+#docker run -v redisinsight:/db -p 80:8001 -d redislabs/redisinsight:latest

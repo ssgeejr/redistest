@@ -11,3 +11,11 @@ services:
 #            - /opt/apps/redis/redis.conf:/usr/local/etc/redis/redis.conf
         ports:
             - 6379:6379
+    insight:
+        image: redislabs/redisinsight:latest
+        container_name: insight
+        restart: always
+        volumes:
+            - /opt/apps/redisinsight:/db
+        ports:
+            - 80:8081

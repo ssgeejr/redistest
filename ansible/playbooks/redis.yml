@@ -1,0 +1,20 @@
+---
+- hosts: all
+  #become: true
+  #  vars_files:
+  #  - vars/default.yml
+
+  tasks:
+  - name: Re-create a redis container
+    docker_container:
+      name: redisent
+      image: redislabs/redis
+      # command: redis-server --appendonly yes
+      state: present
+      recreate: yes
+      # cap_add:
+      #  - sys_resource
+      exposed_ports:
+        - 8443
+        - 9443
+        - 12000

@@ -1,0 +1,23 @@
+---
+- name: Create user
+  remote_user: devops
+  become: yes
+  user:
+    name: "{{ item.0.user }}"
+    shell: /bin/bash
+    groups:
+       - docker
+       - devops
+    append: yes
+  loop: "{{ usernames | subelements('sshkey', 'skip_missing=True') }}"
+
+- name: Add users ssh public key
+  remote_user: devops
+  become: yes
+  authorized_key:
+    user: "{{ item.0.user }}"
+    state: present
+    key: "{{ item.1 }}"
+  loop: "{{ usernames | subelements('sshkey', 'skip_missing=True') }}"
+
+

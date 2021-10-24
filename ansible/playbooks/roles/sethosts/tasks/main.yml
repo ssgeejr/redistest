@@ -1,0 +1,15 @@
+---
+- name: Copy a "/etc/hosts" file on the remote machine for editing
+  become: true
+  become_user: root
+  copy:
+    src: /opt/projects/redprince/playbooks/files/firefly.dev.hosts/firefly.hosts
+    dest: /etc/hosts.d/firefly.hosts
+    #remote_src: yes
+
+- name: Manage Hostfile
+  become: true
+  become_user: root
+  shell: cat /etc/hosts.d/hosts > /etc/hosts.new && cat /etc/hosts.d/firefly.hosts >> /etc/hosts.new
+
+

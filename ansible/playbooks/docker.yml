@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: true
+  #  vars_files:
+  #  - vars/default.yml
+
+  tasks:
+    - name: Install unzip (as test)
+      apt: name=unzip state=present update_cache=yes force_apt_get=yes
+    - name: Install docker (as test)
+      apt: name=docker-ce state=present update_cache=yes force_apt_get=yes
+    - name: Add User
+      command: echo 'add user'
+    - name: Add user to group 'usermod -ag docker <USER>'
+      command: echo 'update user'
+    - name: Install Compose
+      command: echo 'install compose'
+    - name: Install Git
+      command: echo 'install git'
+

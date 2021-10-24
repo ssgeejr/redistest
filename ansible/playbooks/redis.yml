@@ -18,3 +18,7 @@
         - 8443
         - 9443
         - 12000
+      # securityContext:
+      #   capabilities:
+      #    drop: ["all"]
+      #    add: ["SYS_RESOURCE"]

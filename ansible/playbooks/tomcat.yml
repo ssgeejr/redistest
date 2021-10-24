@@ -1,0 +1,13 @@
+---
+- hosts: all
+  environment:
+    PYTHONPATH: "/usr/lib/python2.7/dist-packages"
+  tasks:
+  - name: start a tomcat instance inside a docker container
+    docker_container:
+      name: tomcat
+      state: started
+      image: "tomcat"
+      pull: true
+      ports:
+        - "8080:8080"

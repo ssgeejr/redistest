@@ -7,6 +7,18 @@
   tasks:
     - name: Install unzip (as test)
       apt: name=unzip state=present update_cache=yes force_apt_get=yes
+    - name: install docker-compose python module
+      pip:
+        name: docker-compose
+        state: present
+    - name: install docker-py python module
+      pip:
+        name: docker-py
+        state: present
+    - name: install docker python module
+      pip:
+        name: docker
+        state: present
     - name: Install docker (as test)
       apt: name=docker-ce state=present update_cache=yes force_apt_get=yes
     - name: Add User

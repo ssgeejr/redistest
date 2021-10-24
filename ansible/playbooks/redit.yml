@@ -1,0 +1,13 @@
+---
+- hosts: all
+  #become: true
+  #  vars_files:
+  #  - vars/default.yml
+
+  tasks:
+  - name: Clone a github repository
+    git:
+       repo: https://github.com/geeforceyt/ipp.git
+       dest: /opt/apps/ipp/
+       clone: yes
+       update: yes

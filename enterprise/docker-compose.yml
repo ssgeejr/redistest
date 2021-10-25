@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+    redisent:
+        image: redislabs/redis:6.2.4-54
+        container_name: redisent
+        restart: always
+        cap_add:
+             - sys_resource
+#        volumes:
+#            - /opt/apps/redis/data:/data
+        ports:
+            - 8443:8443
+            - 9443:9443
+            - 12000:12000

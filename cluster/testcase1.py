@@ -4,7 +4,7 @@ rp1 = redis.StrictRedis(host='localhost', port=12000, db=0)
 rp2 = redis.StrictRedis(host='localhost', port=12002, db=0)
 
 print ("set key1 123 in cluster 1")
-print (rp1.set('key1', '123'))
+print (rp1.set('key1', 'Hello World'))
 print ("get key1 cluster 1")
 print (rp1.get('key1'))
 

@@ -10,8 +10,7 @@ public class TestClusterConnectivity {
 	try{
 	Config config = new Config();
         //config.useClusterServers().addNodeAddress("redis://localhost:12000", "redis://localhost:12002");
-	config.useClusterServers().setScanInterval(2000).addNodeAddress.("redis://localhost:12000", "redis://localhost:12002");
-
+	config.useClusterServers().setScanInterval(2000).addNodeAddress("redis://localhost:9443", "redis://localhost:9445"); 
         RedissonClient redisson = Redisson.create(config);
 
         // operations with Redis based Lock

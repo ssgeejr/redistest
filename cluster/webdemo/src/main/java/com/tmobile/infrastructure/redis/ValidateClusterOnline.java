@@ -2,7 +2,7 @@ package com.tmobile.infrastructure.redis;
 
 import redis.clients.jedis.Jedis;
 
-public class RedisClusterTest {
+public class ValidateClusterOnline {
 
     public static void main( String[] args ) {
         System.out.println( "Hello World!" );

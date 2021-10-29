@@ -14,7 +14,7 @@ import net.bytebuddy.asm.Advice.This;
 public class TestClusterConnectivity {
 
     public static void main( String[] args ) {
-    	new TestClusterConnectivity().JedisTestAlpha();
+    	new TestClusterConnectivity().ClusterTest();
     }
     
 	public void ClusterTest() {

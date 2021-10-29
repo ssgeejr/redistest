@@ -30,11 +30,13 @@ hs_err_pid*
 war-*
 
 target/
+/target/
+*/target/**
 log/
 logs/
 
 /target
-webapp/target
+webapp/target/
 webapp/log
 webapp/logs
 

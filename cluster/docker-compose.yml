@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+    node2:
+        image: redislabs/redis:6.2.4-54
+        container_name: node2
+        #hostname: node2
+        cap_add:
+             - sys_resource
+        ports:
+            - 8443:8443
+            - 9443:9443
+            - 12000:12000
+        extra_hosts:
+            - "alphanode:10.115.252.208"
+            - "omeganode:172.31.33.159"
